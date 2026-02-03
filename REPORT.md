@@ -146,7 +146,6 @@ npm run preview
 
 ## 📞 КОНТАКТЫ
 - GitHub: (https://github.com/AnnSamSPb)
-- Проект: (https://AnnSamSPb.github.io/Audio-shop/)
 - Telegram:  [@samaannet](https://web.telegram.org/k/#samaannet)
 
 ## 🙏 БЛАГОДАРНОСТИ
