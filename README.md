@@ -1,73 +1,150 @@
-# React + TypeScript + Vite
+# QPICK Audio Shop 🎧
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Интернет-магазин наушников с современным дизайном и полным функционалом корзины.
 
-Currently, two official plugins are available:
+## 🚀 Демо
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![Live Demo](https://img.shields.io/badge/demo-live-green?style=for-the-badge)](https://AnnSamSPb.github.io/Audio-shop/)
 
-## React Compiler
+## ✨ Особенности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🛒 **Полнофункциональная корзина** с добавлением/удалением товаров
+- 📱 **Адаптивный дизайн** для всех устройств
+- 🎨 **Современный UI/UX** с анимациями и переходами
+- 🔍 **Фильтрация товаров** по категориям (проводные/беспроводные)
+- 💾 **Сохранение состояния** корзины в sessionStorage
+- ⚡ **Высокая производительность** благодаря React + Vite
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Структура проекта (FSD - Feature Sliced Design)
+```
+src/
+├── app/ # Инициализация приложения (store, провайдеры)
+├── pages/ # Страницы приложения
+│ ├── HomePage/ # Главная страница с каталогом
+│ └── CartPage/ # Страница корзины
+├── widgets/ # Крупные независимые блоки
+│ ├── Header/ # Шапка сайта
+│ └── Footer/ # Подвал сайта
+├── features/ # Функциональности (корзина)
+├── entities/ # Бизнес-сущности (товары)
+└── shared/ # Переиспользуемые компоненты и утилиты
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠 Технологии
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **React 18** + TypeScript
+- **Vite** - сборщик и dev-сервер
+- **Redux Toolkit** - управление состоянием
+- **React Router DOM** - навигация
+- **React Icons** - иконки
+- **CSS Modules** - стилизация
+- **ESLint** + **Prettier** - линтинг и форматирование
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Быстрый старт
+
+### Предварительные требования
+- Node.js 18+ 
+- npm или yarn
+
+### Установка и запуск
+
+```bash
+# Клонирование репозитория
+git clone https://github.com/AnnSamSPb/Audio-shop.git
+cd Audio-shop
+
+# Установка зависимостей
+npm install
+
+# Запуск в режиме разработки
+npm run dev
+
+# Сборка для продакшена
+npm run build
+
+# Предпросмотр сборки
+npm run preview
 ```
+
+## 📦 Скрипты
+
+- `npm run dev` - запуск dev-сервера на http://localhost:5173
+- `npm run build` - сборка проекта в папку `dist/`
+- `npm run preview` - предпросмотр собранного проекта
+- `npm run lint` - проверка кода линтером
+- `npm run deploy` - деплой на GitHub Pages
+
+## 🎯 Функционал
+
+### Главная страница
+- Отображение каталога товаров
+- Разделение на проводные и беспроводные наушники
+- Быстрое добавление в корзину
+- Информация о цене и рейтинге
+
+### Корзина
+- Просмотр добавленных товаров
+- Изменение количества товаров
+- Удаление товаров из корзины
+- Расчет общей суммы
+- Оформление заказа (демо-режим)
+
+### Header & Footer
+- Навигация между страницами
+- Счетчик товаров в корзине
+- Ссылки на соцсети
+- Контактная информация
+
+## 🔧 Конфигурация
+
+### Настройки Vite
+- Dev-сервер с автоматическим открытием браузера
+- Алиасы для удобных импортов
+- Поддержка CSS Modules
+- Оптимизация сборки
+
+### Настройки TypeScript
+- Строгий режим типизации
+- Алиасы путей
+- Совместимость с React 18
+
+## 🐛 Отладка
+
+### Консоль разработчика
+```javascript
+// Проверка состояния Redux
+console.log(store.getState())
+
+// Проверка sessionStorage
+console.log(sessionStorage.getItem('cart'))
+```
+
+### DevTools
+- **React DevTools** для отладки компонентов
+- **Redux DevTools** для отслеживания состояния
+- **Browser DevTools** для анализа производительности
+
+## 📱 Адаптивность
+
+- **Desktop**: 3 колонки товаров
+- **Tablet**: 2 колонки товаров
+- **Mobile**: 1 колонка товаров
+- Поддержка всех современных браузеров
+
+## 📄 Лицензия
+
+Этот проект распространяется под лицензией MIT
+
+## 📞 Контакты
+
+- **Соцсети**: [Telegram](https://web.telegram.org/k/#samaannet)
+
+## 🙏 Благодарности
+
+- Иконки от [React Icons](https://react-icons.github.io/react-icons/)
+- Шрифт [Montserrat](https://fonts.google.com/specimen/Montserrat)
+- Архитектура [Feature Sliced Design](https://feature-sliced.design/)
+
+---
+
+*Разработано с ❤️ для любителей качественного звука*

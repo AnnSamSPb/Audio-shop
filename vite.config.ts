@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  // base: '/QPICK-Audio-Shop/', // ЗАКОММЕНТИРОВАНО
+  base: '/Audio-shop/',
   server: {
     open: true,
   },
