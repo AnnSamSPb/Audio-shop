@@ -1,0 +1,158 @@
+.footer {
+  background-color: var(--color-bg-content);
+  padding: 29px 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.navItem {
+  display: block;
+}
+
+.navLink {
+  color: var(--color-text);
+  font-size: 14px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+.serviceTerms {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.termsLink {
+  color: var(--color-text);
+  font-size: 14px;
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.termsLink:hover {
+  color: var(--color-primary);
+}
+
+.languageSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.earthIcon {
+  color: var(--color-text-light);
+}
+
+.languageList {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.languageButton {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.languageButton:hover {
+  background-color: var(--color-bg);
+}
+
+.languageButton.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.socialLinks {
+  display: flex;
+}
+
+.socialList {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socialLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialLink:hover {
+  background-color: var(--color-bg);
+  transform: scale(1.1);
+}
