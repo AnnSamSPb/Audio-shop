@@ -1,7 +1,10 @@
 import type { FC } from 'react'
 import { useAppDispatch } from '@/app/store/hooks'
 import { ProductCard } from '@entities/product'
-import { getWiredHeadphones, getWirelessHeadphones } from '@entities/product'
+import {
+  getWiredHeadphones,
+  getWirelessHeadphones
+} from '@entities/product'
 import { cartActions } from '@features/cart'
 import type { Product } from '@entities/product'
 import styles from './HomePage.module.css'
@@ -9,6 +12,7 @@ import styles from './HomePage.module.css'
 export const HomePage: FC = () => {
   const dispatch = useAppDispatch()
 
+  // Получаем товары по категориям через функции
   const wiredHeadphones = getWiredHeadphones()
   const wirelessHeadphones = getWirelessHeadphones()
 

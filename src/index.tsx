@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(container!);
 root.render(
   <Provider store={store}>
     <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename="/Audio-shop/">
         <App />
       </BrowserRouter>
     </React.StrictMode>

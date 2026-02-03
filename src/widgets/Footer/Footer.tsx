@@ -4,6 +4,7 @@ import { FaVk, FaTelegram, FaWhatsapp } from 'react-icons/fa'
 import { IoEarth } from 'react-icons/io5'
 import { APP_CONSTANTS } from '@shared/config/constants'
 import styles from './Footer.module.css'
+import { Container } from '@/shared/ui/Container/Container'
 
 export const Footer: FC = () => {
   const handleSocialClick = (platform: 'vk' | 'telegram' | 'whatsapp') => {
@@ -13,7 +14,9 @@ export const Footer: FC = () => {
       whatsapp: APP_CONSTANTS.SOCIAL_LINKS.WHATSAPP,
     };
     
-    window.open(urls[platform], '_blank', 'noopener,noreferrer,nofollow');
+    if (window.confirm('Вы покидаете сайт. Перейти в социальную сеть?')) {
+      window.open(urls[platform], '_blank', 'noopener,noreferrer,nofollow');
+    }
   };
 
   const handleCall = () => {
@@ -22,7 +25,7 @@ export const Footer: FC = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className="container">
+      <Container>
         <div className={styles.content}>
           <div className={styles.column}>
             <div className={styles.logo}>QPICK</div>
@@ -117,7 +120,7 @@ export const Footer: FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

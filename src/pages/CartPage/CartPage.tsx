@@ -6,22 +6,15 @@ import { getProductById } from '@entities/product'
 import { Counter } from '@shared/ui/Counter'
 import { Button } from '@shared/ui/Button'
 import { FiTrash2 } from 'react-icons/fi'
+import type { CartItemWithDetails } from './types'
 import styles from './CartPage.module.css'
-
-interface CartItemWithDetails {
-  id: number
-  title: string
-  price: number
-  img: string
-  quantity: number
-  productExists: boolean
-}
 
 export const CartPage: FC = () => {
   const dispatch = useAppDispatch()
   const cartItems = useAppSelector(selectCartItems)
   const cartTotal = useAppSelector(selectCartTotal)
 
+  // Обогащаем товары в корзине информацией из каталога
   const cartItemsWithDetails: CartItemWithDetails[] = useMemo(() => {
     return cartItems.map(item => {
       const product = getProductById(item.id)
@@ -37,20 +30,24 @@ export const CartPage: FC = () => {
 
   const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0)
 
+  // Обработчик изменения количества товара
   const handleUpdateQuantity = (id: number, quantity: number) => {
     dispatch(cartActions.updateQuantity({ id, quantity }))
   }
 
+  // Обработчик удаления товара
   const handleRemoveItem = (id: number) => {
     dispatch(cartActions.removeItem(id))
   }
 
+  // Обработчик очистки корзины
   const handleClearCart = () => {
     if (window.confirm('Очистить корзину?')) {
       dispatch(cartActions.clearCart())
     }
   }
 
+  // Обработчик оформления заказа
   const handleCheckout = () => {
     alert('Заказ оформлен! Спасибо за покупку!')
     dispatch(cartActions.clearCart())

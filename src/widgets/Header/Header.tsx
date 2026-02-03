@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import { HiHeart } from 'react-icons/hi';
 import styles from './Header.module.css';
 import { CartButton } from '@/features/cart/ui';
+import { Container } from '@/shared/ui/Container/Container';
 
 export const Header: FC = () => {
   const favoritesCount = 2; // Заглушка "2"
 
   return (
     <header className={styles.header}>
-      <div className="container">
+      <Container>
         <div className={styles.headerContent}>
           <Link to="/" className={styles.logo} aria-label="QPICK - вернуться на главную">
             QPICK
@@ -33,7 +34,7 @@ export const Header: FC = () => {
             </ul>
           </nav>
         </div>
-      </div>
+      </Container>
     </header>
   );
 };

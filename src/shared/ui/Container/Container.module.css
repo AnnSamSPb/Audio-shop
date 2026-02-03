@@ -1,0 +1,25 @@
+.container {
+  max-width: var(--content-inline-size, 1110px);
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 10px;
+  }
+}

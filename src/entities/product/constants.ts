@@ -1,9 +1,9 @@
-import Apple_BYZ_S852I from './assets/Apple_BYZ_S852I.png';
-import Apple_AirPods from './assets/Apple_AirPods.png';
-import Apple_EarPods_box from './assets/Apple_EarPods_box.png';
-import Apple_EarPods from './assets/Apple_EarPods.png';
-import BOROFONE_BO4 from './assets/BOROFONE_BO4.png';
-import GERLAX_GH_04 from './assets/GERLAX_GH-04.png';
+import Apple_BYZ_S852I from '@/assets/Apple_BYZ_S852I.png';
+import Apple_AirPods from '@/assets/Apple_AirPods.png';
+import Apple_EarPods_box from '@/assets/Apple_EarPods_box.png';
+import Apple_EarPods from '@/assets/Apple_EarPods.png';
+import BOROFONE_BO4 from '@/assets/BOROFONE_BO4.png';
+import GERLAX_GH_04 from '@/assets/GERLAX_GH_04.png';
 import type { Product } from './types';
 
 export const headphones: Product[] = [
