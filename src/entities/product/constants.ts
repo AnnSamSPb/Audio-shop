@@ -1,9 +1,15 @@
-import type { Product } from "./types";
+import Apple_BYZ_S852I from './assets/Apple_BYZ_S852I.png';
+import Apple_AirPods from './assets/Apple_AirPods.png';
+import Apple_EarPods_box from './assets/Apple_EarPods_box.png';
+import Apple_EarPods from './assets/Apple_EarPods.png';
+import BOROFONE_BO4 from './assets/BOROFONE_BO4.png';
+import GERLAX_GH_04 from './assets/GERLAX_GH-04.png';
+import type { Product } from './types';
 
 export const headphones: Product[] = [
   {
     id: 1,
-    img: "./assets/Apple_BYZ_S852I.png",
+    img: Apple_BYZ_S852I,
     title: "Apple BYZ S852I",
     price: 2927,
     rate: 4.7,
@@ -11,7 +17,7 @@ export const headphones: Product[] = [
   },
   {
     id: 2,
-    img: "./assets/Apple_EarPods_box.png",
+    img: Apple_EarPods_box,
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
@@ -19,7 +25,7 @@ export const headphones: Product[] = [
   },
   {
     id: 3,
-    img: "/assets/Apple_EarPods.png",
+    img: Apple_EarPods,
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
@@ -27,7 +33,7 @@ export const headphones: Product[] = [
   },
   {
     id: 4,
-    img: "/assets/Apple_BYZ_S852I.png",
+    img: Apple_BYZ_S852I,
     title: "Apple BYZ S852I",
     price: 2927,
     rate: 4.7,
@@ -35,7 +41,7 @@ export const headphones: Product[] = [
   },
   {
     id: 5,
-    img: "/assets/Apple_EarPods_box.png",
+    img: Apple_EarPods_box,
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
@@ -43,7 +49,7 @@ export const headphones: Product[] = [
   },
   {
     id: 6,
-    img: "/assets/Apple_EarPods.png",
+    img: Apple_EarPods,
     title: "Apple EarPods",
     price: 2327,
     rate: 4.5,
@@ -51,7 +57,7 @@ export const headphones: Product[] = [
   },
   {
     id: 7,
-    img:"/assets/Apple_AirPods.png",
+    img: Apple_AirPods,
     title: "Apple AirPods",
     price: 9527,
     rate: 4.7,
@@ -59,7 +65,7 @@ export const headphones: Product[] = [
   },
   {
     id: 8,
-    img: "/assets/GERLAX_GH-04.png",
+    img: GERLAX_GH_04,
     title: "GERLAX GH-04",
     price: 6527,
     rate: 4.7,
@@ -67,7 +73,7 @@ export const headphones: Product[] = [
   },
   {
     id: 9,
-    img: "/assets/BOROFONE_BO4.png",
+    img: BOROFONE_BO4,
     title: "BOROFONE BO4",
     price: 7527,
     rate: 4.7,
