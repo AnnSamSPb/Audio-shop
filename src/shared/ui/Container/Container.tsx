@@ -1,10 +1,6 @@
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 import styles from './Container.module.css';
-
-interface ContainerProps {
-  children: ReactNode;
-  className?: string;
-}
+import type { ContainerProps } from './types';
 
 export const Container: FC<ContainerProps> = ({ 
   children, 

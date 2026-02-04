@@ -7,26 +7,37 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  gap: 8px;
+  border: none;
+  font-family: inherit;
 }
 
 .button:hover {
   transform: translateY(-2px);
 }
 
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .primary {
   background-color: var(--color-primary);
   color: white;
-  border: none;
 }
 
-.primary:hover {
+.primary:hover:not(:disabled) {
   background-color: var(--color-primary-light);
 }
 
 .secondary {
   background-color: var(--color-secondary);
   color: white;
-  border: none;
+}
+
+.secondary:hover:not(:disabled) {
+  opacity: 0.9;
 }
 
 .outline {
@@ -35,7 +46,7 @@
   border: 1px solid var(--color-border);
 }
 
-.outline:hover {
+.outline:hover:not(:disabled) {
   background-color: var(--color-bg);
 }
 
@@ -56,4 +67,12 @@
 
 .fullWidth {
   width: 100%;
+}
+
+/* Стиль для иконки */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
