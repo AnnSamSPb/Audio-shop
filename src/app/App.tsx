@@ -1,23 +1,24 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { CartPage } from '@/pages/CartPage/CartPage';
 import { HomePage } from '@/pages/HomePage/HomePage';
+import { ErrorPage } from '@/pages/ErrorPage/ErrorPage';
 import { Header } from '@/widgets/Header/Header';
 import { Footer } from '@/widgets/Footer/Footer';
 import '@/index.css'
-import { Container } from '@/shared/ui/Container/Container';
 
 function App() {
   return (
     <>
       <Header />
-      <main className="page">
-        <Container>
+      <main className="page__section">
+        <div className="container">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/cart" element={<CartPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            {/* Страница 404 для несуществующих маршрутов */}
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
-        </Container>
+        </div>
       </main>
       <Footer />
     </>
