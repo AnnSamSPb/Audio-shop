@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './index.css'
 import { store } from './app/store/store.ts';
@@ -13,9 +13,9 @@ root.render(
   <Provider store={store}>
     <React.StrictMode>
       {/* <BrowserRouter basename="/Audio-shop/"> */}
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </React.StrictMode>
   </Provider>
 );
