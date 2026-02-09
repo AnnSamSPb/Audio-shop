@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import './index.css'
 import { store } from './app/store/store.ts';
@@ -12,10 +12,9 @@ const root = ReactDOM.createRoot(container!);
 root.render(
   <Provider store={store}>
     <React.StrictMode>
-      {/* <BrowserRouter basename="/Audio-shop/"> */}
-      <HashRouter>
+      <BrowserRouter basename="/Audio-shop/">
         <App />
-      </HashRouter>
+      </BrowserRouter>
     </React.StrictMode>
   </Provider>
 );
