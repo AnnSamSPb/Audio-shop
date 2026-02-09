@@ -61,6 +61,17 @@
   font-weight: 500;
 }
 
+.trashIcon {
+  width: 20px;
+  height: 20px;
+  filter: var(--icon-filter-gray);
+  transition: var(--transition);
+}
+
+.removeButton:hover .trashIcon {
+  filter: var(--icon-filter-orange);
+}
+
 @media (max-width: 1024px) {
   .cartContent {
     grid-template-columns: 1fr;

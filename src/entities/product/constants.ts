@@ -12,6 +12,7 @@ export const headphones: Product[] = [
     img: Apple_BYZ_S852I,
     title: "Apple BYZ S852I",
     price: 2927,
+    oldPrice: 3527,
     rate: 4.7,
     category: 'wired'
   },
@@ -76,6 +77,7 @@ export const headphones: Product[] = [
     img: BOROFONE_BO4,
     title: "BOROFONE BO4",
     price: 7527,
+    oldPrice: 8000,
     rate: 4.7,
     category: 'wireless'
   }

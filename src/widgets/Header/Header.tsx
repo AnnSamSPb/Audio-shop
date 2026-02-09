@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { HiHeart } from 'react-icons/hi';
+import favoritesIcon from '@/assets/icons/Heart.svg';
 import styles from './Header.module.css';
 import { CartButton } from '@/features/cart/ui';
-import { Container } from '@/shared/ui/Container/Container';
+import { Container } from '@/shared/ui/Container';
 
 export const Header: FC = () => {
   const favoritesCount = 2; // Заглушка "2"
@@ -21,10 +21,16 @@ export const Header: FC = () => {
               <li className={styles.navItem}>
                 <button 
                   className={styles.favoritesButton} 
-                  aria-label={`Избранное, ${favoritesCount} товаров`}
+                  aria-label={`Избранное, ${favoritesCount} товар${getCountSuffix(favoritesCount)}`}
                 >
-                  <HiHeart />
-                  <span className={styles.favoritesCounter}>{favoritesCount}</span>
+                  <img 
+                    src={favoritesIcon} 
+                    alt="Избранное" 
+                    className={styles.favoritesIcon}
+                  />
+                  {favoritesCount > 0 && (
+                    <span className="counter-badge">{favoritesCount}</span>
+                  )}
                 </button>
               </li>
 
@@ -38,3 +44,10 @@ export const Header: FC = () => {
     </header>
   );
 };
+
+// Вспомогательная функция для правильного окончания
+function getCountSuffix(count: number): string {
+  if (count % 10 === 1 && count % 100 !== 11) return '';
+  if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 >= 20)) return 'а';
+  return 'ов';
+}

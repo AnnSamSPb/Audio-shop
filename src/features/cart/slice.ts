@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { sessionStorage } from '@shared/lib'
 import type { CartItem, CartState } from './types'
+import type { RootState } from '@/app/store/store'
 
 const initialState: CartState = sessionStorage.getItem<CartItem[]>('cart', [])
 
@@ -46,9 +47,11 @@ const cartSlice = createSlice({
   },
 })
 
-export const selectCartItems = (state: { cart: CartState }) => state.cart
+export const selectCartItems = (state: RootState) => state.cart
+
 export const selectCartCount = (state: { cart: CartState }) => 
   state.cart.reduce((total, item) => total + item.quantity, 0)
+
 export const selectCartTotal = (state: { cart: CartState }) =>
   state.cart.reduce((total, item) => total + (item.price * item.quantity), 0)
 

@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="page__section">
+      <main className="page">
         <div className="container">
           <Routes>
             <Route path="/" element={<HomePage />} />

@@ -8,6 +8,7 @@ import {
 import { cartActions } from '@features/cart'
 import type { Product } from '@entities/product'
 import styles from './HomePage.module.css'
+import { Container } from '@/shared/ui/Container'
 
 export const HomePage: FC = () => {
   const dispatch = useAppDispatch()
@@ -27,7 +28,8 @@ export const HomePage: FC = () => {
 
   return (
     <div className={styles.mainPage}>
-      <div className="container">
+      {/* <div className="container"> */}
+      <Container>
         {/* Раздел "Наушники" (6 карточек) */}
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Наушники</h2>
@@ -41,7 +43,9 @@ export const HomePage: FC = () => {
             ))}
           </div>
         </section>
+      </Container>
 
+      <Container>
         {/* Раздел "Беспроводные наушники" (3 карточки) */}
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Беспроводные наушники</h2>
@@ -55,7 +59,8 @@ export const HomePage: FC = () => {
             ))}
           </div>
         </section>
-      </div>
+      </Container>
+      {/* </div> */}
     </div>
   )
 }

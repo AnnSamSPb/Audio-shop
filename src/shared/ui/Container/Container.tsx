@@ -6,5 +6,9 @@ export const Container: FC<ContainerProps> = ({
   children, 
   className = ''
 }) => {
-  return <div className={`${styles.container} ${className}`}>{children}</div>;
+  return (
+    <div className={`${styles.container} ${className}`}>
+      {children}
+    </div>
+  );
 };

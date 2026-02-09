@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { useAppSelector } from '@/app/store/hooks'
 import { selectCartCount } from '../slice'
-import { FiShoppingCart } from 'react-icons/fi'
+import cartIcon from '@/assets/icons/Cart.svg'
 import styles from './CartButton.module.css'
 
 export const CartButton: FC = () => {
@@ -14,9 +14,13 @@ export const CartButton: FC = () => {
       className={styles.cartButton}
       aria-label={`Корзина, ${cartCount} товаров`}
     >
-      <FiShoppingCart />
+      <img 
+        src={cartIcon} 
+        alt="Корзина" 
+        className={styles.cartIcon}
+      />
       {cartCount > 0 && (
-        <span className={styles.counter}>{cartCount}</span>
+        <span className="counter-badge">{cartCount}</span>
       )}
     </Link>
   )

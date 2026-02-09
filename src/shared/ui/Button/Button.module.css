@@ -1,5 +1,5 @@
-.button {
-  border-radius: 10px;
+/* .button {
+  border-radius: 20px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
@@ -23,7 +23,7 @@
 }
 
 .primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
   color: white;
 }
 
@@ -70,9 +70,224 @@
 }
 
 /* Стиль для иконки */
-.icon {
+/* .icon {
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
+} */
+
+/* ============ БАЗОВЫЕ СТИЛИ (DESKTOP 1110px+) ============ */
+
+
+.button {
+  /* Позиционирование и выравнивание */
+  position: relative;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  /* Типографика */
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  
+  /* Размеры для десктопа */
+  padding: 14px 32px;
+  font-size: 16px;
+  min-height: 52px;
+  border-radius: 8px;
+  
+  /* Отключение выделения */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ============ ВАРИАНТЫ ШИРИНЫ ============ */
+.full {
+  width: 100%;
+}
+
+.fixed {
+  width: auto;
+  min-width: 160px; /* Для десктопа достаточно ширины */
+}
+
+/* ============ СТИЛИ КНОПОК ============ */
+.primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.outlined {
+  background-color: transparent;
+  border: 2px solid currentColor;
+}
+
+/* Ховер для primary кнопки */
+.primary:not(:disabled):hover {
+  background-color: var(--color-secondary);
+}
+
+/* Ховер для outlined кнопки */
+.outlined:not(:disabled):hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+/* Ховер для secondary кнопки */
+.secondary:not(:disabled):hover {
+  background-color: var(--color-secondary-light);
+}
+
+/* ============ АДАПТАЦИЯ ============ */
+
+/* Планшеты (вертикальная ориентация) */
+@media (max-width: 768px) {
+  .button {
+    padding: 12px 24px;
+    font-size: 15px;
+    min-height: 48px;
+    border-radius: 6px;
+    gap: 6px;
+  }
+  
+  .fixed {
+    min-width: 140px;
+  }
+  
+  /* Уменьшаем толщину рамки на мобильных */
+  .outlined {
+    border-width: 1.5px;
+  }
+}
+
+/* Мобильные телефоны */
+@media (max-width: 480px) {
+  .button {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-height: 44px;
+    border-radius: 6px;
+  }
+  
+  .fixed {
+    min-width: 120px;
+  }
+  
+  /* Разрешаем перенос текста на мобильных */
+  .button {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+/* Маленькие мобильные телефоны */
+@media (max-width: 360px) {
+  .button {
+    padding: 8px 16px;
+    font-size: 13px;
+    min-height: 40px;
+    border-radius: 5px;
+  }
+  
+  .fixed {
+    min-width: 100px;
+  }
+  
+  /* Еще меньше отступы у иконок */
+  .button {
+    gap: 4px;
+  }
+}
+
+/* Для ориентации landscape на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+  .button {
+    /* В landscape делаем кнопки более компактными по высоте */
+    padding-top: 6px;
+    padding-bottom: 6px;
+    min-height: 36px;
+    font-size: 14px;
+  }
+  
+  /* Уменьшаем минимальную ширину в landscape */
+  .fixed {
+    min-width: 100px;
+  }
+}
+
+/* ============ СОСТОЯНИЯ ============ */
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-primary, #007bff);
+  outline-offset: 2px;
+}
+
+.loading {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+/* ============ ЛОАДЕР (также адаптивный) ============ */
+.loader {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+@media (max-width: 480px) {
+  .loader {
+    width: 14px;
+    height: 14px;
+    border-width: 1.5px;
+  }
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============ КОНТЕЙНЕР ДЛЯ ГРУППЫ КНОПОК ============ */
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .buttonGroup {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonGroup {
+    gap: 8px;
+    flex-direction: column; /* На мобильных можно вертикально */
+  }
+  
+  .buttonGroup .fixed {
+    min-width: 100%;
+  }
 }

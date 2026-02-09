@@ -1,63 +1,323 @@
 .card {
-  background: var(--color-bg-content);
-  border-radius: var(--border-radius);
-  padding: 20px;
-  transition: var(--transition);
+  box-sizing: border-box;
+  padding: 15px 22px 26px;
+  overflow: hidden;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
   height: 100%;
+  min-height: 407px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 40px;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.15);
 }
 
+/* Контейнер изображения */
 .imageContainer {
   width: 100%;
-  height: 200px;
+  max-width: 220px;
+  height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 0 auto;
 }
 
 .image {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Основной контент */
+.content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 12px 25px;
+  align-items: start;
+}
+
+/* Название товара */
+.title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 21px;
+  color: #000;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Блок с ценами */
+.priceWrapper {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+/* Текущая цена */
+.price {
+  color: #ffa542;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 21px;
+  white-space: nowrap;
+}
+
+/* Старая цена */
+.oldPrice {
+  text-decoration: line-through;
+  color: #ffce7f;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+/* Пустая старая цена */
+.oldPrice:empty {
+  display: none;
+}
+
+/* Рейтинг */
+.rating {
+  color: #838383;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 21px;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.starIcon {
+  width: 23px;
+  height: 22px;
+  margin-right: 10px;
   object-fit: contain;
 }
 
-.content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.title {
-  font-size: 16px;
+.ratingValue {
+  font-size: 17px;
   font-weight: 600;
-  margin-bottom: 15px;
-  flex: 1;
+  line-height: 21px;
 }
 
-.info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+/* Кнопка "Купить" */
+.buyButton {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: end;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  color: #000;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 21px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  min-height: 44px; /* Минимальный размер для touch-устройств */
+  min-width: 44px;
 }
 
-.price {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-text);
+.buyButton:hover {
+  opacity: 0.7;
 }
 
-.rating {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--color-text-light);
-  font-size: 14px;
+.clickable {
+  position: relative;
+}
+
+.clickable:active {
+  transform: scale(0.98);
+}
+
+/* ============ МОБИЛЬНАЯ АДАПТАЦИЯ ============ */
+
+/* Планшеты (вертикальная ориентация) */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px 15px;
+    border-radius: 20px;
+    gap: 30px;
+    min-height: 350px;
+  }
+  
+  .imageContainer {
+    max-width: 180px;
+    height: 200px;
+  }
+  
+  .content {
+    gap: 10px 20px;
+  }
+  
+  .title,
+  .price,
+  .rating,
+  .buyButton {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .ratingValue {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  
+  .oldPrice {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  
+  .starIcon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+  }
+}
+
+/* Мобильные телефоны */
+@media (max-width: 480px) {
+  .card {
+    padding: 15px 12px;
+    border-radius: 15px;
+    gap: 25px;
+    min-height: 320px;
+  }
+  
+  .imageContainer {
+    max-width: 150px;
+    height: 170px;
+  }
+  
+  .content {
+    gap: 8px 15px;
+  }
+  
+  .title,
+  .price,
+  .rating,
+  .buyButton {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  
+  .ratingValue {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  
+  .oldPrice {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  
+  .starIcon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+  
+  .buyButton {
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
+
+/* Маленькие мобильные телефоны */
+@media (max-width: 360px) {
+  .card {
+    padding: 12px 10px;
+    border-radius: 12px;
+    gap: 20px;
+    min-height: 280px;
+  }
+  
+  .imageContainer {
+    max-width: 120px;
+    height: 140px;
+  }
+  
+  .title,
+  .price,
+  .rating,
+  .buyButton {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  
+  .ratingValue {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  
+  .oldPrice {
+    font-size: 10px;
+    line-height: 13px;
+  }
+  
+  .starIcon {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+  }
+}
+
+/* Для ориентации landscape на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+  .card {
+    flex-direction: row;
+    padding: 15px;
+    gap: 20px;
+    min-height: auto;
+  }
+  
+  .imageContainer {
+    max-width: 100px;
+    height: 120px;
+    flex-shrink: 0;
+  }
+  
+  .content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto auto;
+    align-content: center;
+  }
+  
+  .title {
+    grid-column: 1 / span 2;
+    margin-bottom: 5px;
+  }
+  
+  .buyButton {
+    align-self: center;
+  }
 }

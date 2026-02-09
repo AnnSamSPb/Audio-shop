@@ -1,0 +1,207 @@
+.popup {
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup__container {
+  position: relative;
+  box-sizing: border-box;
+  width: 450px;
+  background-color: #eaeaea;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+.popup__cross {
+  position: absolute;
+  background-color: transparent;
+  color: var(--color-bg-content);
+  font-size: 24px;
+  top: -20px;
+  right: -20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-text);
+  z-index: 2;
+}
+
+.popup__cross:hover {
+  background-color: var(--color-primary);
+}
+
+.popup__title {
+  margin: 40px 20px 15px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+  padding: 0 10px;
+}
+
+.popup__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 15px;
+}
+
+.popup__cartLink {
+  color: var(--color-text);
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 16px 16px;
+  text-align: center;
+}
+
+.popup__cartLink:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.popup__button {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 50px;
+  background-color: #111010;
+  color: #eaeaea;
+  outline: 0;
+  text-decoration: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  margin-top: auto;
+}
+
+.popup__button:hover {
+  background-color: var(--color-primary);
+}
+
+/* Адаптивные стили */
+
+/* Для экранов 400px - 639px */
+@media (min-width: 400px) and (max-width: 639px) {
+  .popup__container {
+    width: 320px;
+  }
+
+  .popup__title {
+    margin: 30px 15px 12px;
+    font-size: 18px;
+  }
+
+  .popup__content {
+    gap: 10px;
+  }
+
+  .popup__button {
+    min-height: 50px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .popup__cartLink {
+    font-size: 15px;
+    padding: 6px 14px;
+  }
+  
+  .popup__cross {
+    top: -15px;
+    right: -15px;
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+}
+
+/* Для экранов меньше 400px */
+@media (max-width: 399px) {
+  .popup__container {
+    width: 85vw;
+    max-height: 85vh;
+    border-radius: 4vw;
+  }
+
+  .popup__cross {
+    top: -4vw;
+    right: -4vw;
+    width: 7vw;
+    height: 7vw;
+    font-size: 4vw;
+  }
+
+  .popup__title {
+    margin: 8vw 4vw 3vw;
+    font-size: 4.5vw;
+    padding: 0 3vw;
+  }
+
+  .popup__content {
+    gap: 2vw;
+  }
+
+  .popup__button {
+    min-height: 14vw;
+    font-size: 4vw;
+    border-radius: 4vw;
+  }
+  
+  .popup__cartLink {
+    font-size: 3.8vw;
+    padding: 2vw 4vw;
+    border-radius: 2vw;
+  }
+}
+
+/* Дополнительный брейкпоинт для очень маленьких экранов */
+@media (max-width: 320px) {
+  .popup__container {
+    width: 90vw;
+  }
+  
+  .popup__title {
+    font-size: 5vw;
+  }
+  
+  .popup__button {
+    font-size: 4.5vw;
+    min-height: 15vw;
+  }
+  
+  .popup__cartLink {
+    font-size: 4.2vw;
+  }
+}

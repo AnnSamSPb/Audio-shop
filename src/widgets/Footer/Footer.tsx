@@ -1,8 +1,10 @@
 import type { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { FaVk, FaTelegram, FaWhatsapp } from 'react-icons/fa'
-import { IoEarth } from 'react-icons/io5'
 import { APP_CONSTANTS } from '@shared/config/constants'
+import earthIcon from '@/assets/icons/Earth.png'
+import vkIcon from '@/assets/icons/VK.svg'
+import telegramIcon from '@/assets/icons/Telegram.svg'
+import whatsappIcon from '@/assets/icons/Whatsapp.svg'
 import styles from './Footer.module.css'
 import { Container } from '@/shared/ui/Container/Container'
 
@@ -28,7 +30,9 @@ export const Footer: FC = () => {
       <Container>
         <div className={styles.content}>
           <div className={styles.column}>
-            <div className={styles.logo}>QPICK</div>
+            <Link to="/" className={styles.logo} aria-label="QPICK - вернуться на главную">
+              QPICK
+            </Link>
           </div>
           
           <div className={styles.column}>
@@ -68,7 +72,11 @@ export const Footer: FC = () => {
                 role="group" 
                 aria-label="Выбор языка"
               >
-                <IoEarth className={styles.earthIcon} aria-hidden="true"/>
+                <img 
+                  src={earthIcon} 
+                  alt="Выбор языка" 
+                  className={styles.earthIcon}
+                />
                 <ul className={styles.languageList}>
                   <li>
                     <button className={styles.languageButton}>Kaz</button>
@@ -95,7 +103,11 @@ export const Footer: FC = () => {
                     className={styles.socialLink}
                     aria-label="ВКонтакте"
                   >
-                    <FaVk aria-hidden="true"/>
+                    <img 
+                      src={vkIcon} 
+                      alt="ВКонтакте" 
+                      className={styles.socialIcon}
+                    />
                   </button>
                 </li>
                 <li>
@@ -104,7 +116,11 @@ export const Footer: FC = () => {
                     className={styles.socialLink}
                     aria-label="Telegram"
                   >
-                    <FaTelegram aria-hidden="true"/>
+                    <img 
+                      src={telegramIcon} 
+                      alt="Telegram" 
+                      className={styles.socialIcon}
+                    />
                   </button>
                 </li>
                 <li>
@@ -113,7 +129,11 @@ export const Footer: FC = () => {
                     className={styles.socialLink}
                     aria-label="WhatsApp"
                   >
-                    <FaWhatsapp aria-hidden="true"/>
+                    <img 
+                      src={whatsappIcon} 
+                      alt="WhatsApp" 
+                      className={styles.socialIcon}
+                    />
                   </button>
                 </li>
               </ul>

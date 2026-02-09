@@ -1,6 +1,6 @@
 .footer {
   background-color: var(--color-bg-content);
-  padding: 29px 0;
+  padding: 29px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -13,28 +13,34 @@
   gap: 40px;
 }
 
-@media (max-width: 768px) {
-  .content {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.logo {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-@media (max-width: 480px) {
-  .content {
-    grid-template-columns: 1fr;
-  }
+.earthIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.socialIcon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.socialLink:hover .socialIcon {
+  filter: var(--icon-filter-orange);
 }
 
 .column {
   display: flex;
   flex-direction: column;
   gap: 15px;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--color-text);
 }
 
 .nav {
@@ -57,7 +63,7 @@
 
 .navLink {
   color: var(--color-text);
-  font-size: 14px;
+  font-size: 17px;
   text-decoration: none;
   background: none;
   border: none;
@@ -69,7 +75,7 @@
 }
 
 .navLink:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .serviceTerms {
@@ -80,14 +86,14 @@
 
 .termsLink {
   color: var(--color-text);
-  font-size: 14px;
+  font-size: 17px;
   text-decoration: none;
   transition: var(--transition);
   display: inline-block;
 }
 
 .termsLink:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .languageSwitcher {
@@ -111,8 +117,9 @@
 .languageButton {
   background: none;
   border: none;
-  color: var(--color-text-light);
-  font-size: 12px;
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
   padding: 4px 8px;
   border-radius: 4px;
@@ -124,8 +131,7 @@
 }
 
 .languageButton.active {
-  background-color: var(--color-primary);
-  color: white;
+  color: var(--color-secondary);
 }
 
 .socialLinks {
@@ -145,7 +151,6 @@
   border: none;
   cursor: pointer;
   padding: 8px;
-  border-radius: 50%;
   transition: var(--transition);
   display: flex;
   align-items: center;
@@ -153,6 +158,18 @@
 }
 
 .socialLink:hover {
-  background-color: var(--color-bg);
   transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
 }

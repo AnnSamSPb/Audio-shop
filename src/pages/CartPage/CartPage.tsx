@@ -1,13 +1,18 @@
-import { type FC, useMemo } from 'react'
-import { Link } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '@/app/store/hooks'
-import { cartActions, selectCartItems, selectCartTotal } from '@features/cart'
-import { getProductById } from '@entities/product'
-import { Counter } from '@shared/ui/Counter'
-import { Button } from '@shared/ui/Button'
-import { FiTrash2 } from 'react-icons/fi'
-import type { CartItemWithDetails } from './types'
-import styles from './CartPage.module.css'
+import type { FC } from 'react';
+import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
+import {
+  cartActions,
+  selectCartItems,
+  selectCartTotal
+} from '@features/cart';
+import { getProductById } from '@entities/product';
+import { Counter } from '@shared/ui/Counter';
+import { Button } from '@shared/ui/Button';
+import trashIcon from '@/assets/icons/Trash.svg';
+import type { CartItemWithDetails } from './types';
+import styles from './CartPage.module.css';
 
 export const CartPage: FC = () => {
   const dispatch = useAppDispatch()
@@ -113,7 +118,11 @@ export const CartPage: FC = () => {
                     className={styles.removeButton}
                     aria-label={`Удалить ${item.title} из корзины`}
                   >
-                    <FiTrash2 size={20} />
+                    <img 
+                      src={trashIcon} 
+                      alt="Удалить" 
+                      className={styles.trashIcon}
+                    />
                   </button>
                 </div>
 

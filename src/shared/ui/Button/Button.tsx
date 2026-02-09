@@ -3,22 +3,32 @@ import type { ButtonProps } from './types';
 
 export const Button = ({
   children,
-  variant = 'primary',
-  size = 'medium',
-  fullWidth = false,
+  variant = 'fixed',
+  styleType = 'primary',
+  isLoading = false,
   className = '',
+  disabled,
   ...props
 }: ButtonProps) => {
   const buttonClasses = [
     styles.button,
-    styles[variant],
-    styles[size],
-    fullWidth ? styles.fullWidth : '',
+    styles[styleType],
+    variant === 'full' ? styles.full : styles.fixed,
+    isLoading ? styles.loading : '',
     className,
-  ].join(' ')
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const isDisabled = disabled || isLoading;
 
   return (
-    <button className={buttonClasses} {...props}>
+    <button 
+      className={buttonClasses} 
+      disabled={isDisabled}
+      {...props}
+    >
+      {isLoading && <span className={styles.loader} />}
       {children}
     </button>
   )
