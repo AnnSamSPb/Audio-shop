@@ -5,6 +5,7 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   base: '/Audio-shop/',
+  
   server: {
     open: true,
   },
@@ -21,9 +22,18 @@ export default defineConfig({
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css'],
   },
+  
   css: {
     modules: {
       localsConvention: 'camelCase',
+    },
+  },
+  
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    rollupOptions: {
+      input: path.resolve(__dirname, 'index.html'),
     },
   },
 })
