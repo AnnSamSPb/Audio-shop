@@ -29,11 +29,11 @@ export default defineConfig({
     },
   },
   
-  build: {
-    outDir: 'dist',
-    sourcemap: false,
-    rollupOptions: {
-      input: path.resolve(__dirname, 'index.html'),
-    },
-  },
+  // build: {
+  //   outDir: 'dist',
+  //   sourcemap: false,
+  //   rollupOptions: {
+  //     input: path.resolve(__dirname, 'index.html'),
+  //   },
+  // },
 })
